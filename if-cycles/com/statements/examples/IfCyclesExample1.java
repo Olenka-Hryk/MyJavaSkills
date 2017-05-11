@@ -10,7 +10,7 @@ public class IfCyclesExample1 {
 		System.out.println("Search the score on a scale ECTS!");
 		ScaleECTS();
 
-		System.out.print("Restart? Y/N");
+		System.out.print("Do you really want to restart? Y/N");
 		BufferedReader yesnot = new BufferedReader(new InputStreamReader(System.in));
 		String beornottobe = (yesnot.readLine().toString());
 
