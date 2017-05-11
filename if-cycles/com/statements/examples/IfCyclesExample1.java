@@ -43,7 +43,6 @@ public class IfCyclesExample1 {
 			} else if (i >= 101) {
 				System.out.println("Output the mark outside!");
 			}
-
 		} catch (NumberFormatException nfe) {
 			System.err.println("Invalid Format!");
 		}
