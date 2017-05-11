@@ -7,8 +7,7 @@ import java.io.InputStreamReader;
 public class IfCyclesExample1 {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("Search score on a scale ECTS!"); // Display the
-																// description.
+		System.out.println("Search the score on a scale ECTS!");
 		ScaleECTS();
 
 		System.out.print("Restart? Y/N");
