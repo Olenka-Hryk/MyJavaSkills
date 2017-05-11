@@ -7,13 +7,14 @@ import java.io.InputStreamReader;
 public class IfCyclesExample1 {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("Search the score on a scale ECTS!");
+		String descriptionprogram = "Search the score on a scale ECTS!";
+		System.out.println(descriptionprogram);
 
 		BufferedReader inputStreamReader = new BufferedReader(new InputStreamReader(System.in));
-		String markValue= null;
+		String markValue = null;
 		String decision = null;
 		do {
-			System.out.println("Insert your mark:");			
+			System.out.println("Insert your mark:");
 			markValue = inputStreamReader.readLine().toString();
 
 			String ecst = getScaleECTS(markValue);
@@ -24,6 +25,7 @@ public class IfCyclesExample1 {
 		} while ("Y".equals(decision));
 	}
 
+	// method for find scale ECTS from mark
 	public static String getScaleECTS(String primaryNumberValue) throws IOException {
 		String ecst = null;
 		try {
@@ -45,7 +47,7 @@ public class IfCyclesExample1 {
 			} else if (i >= 101) {
 				System.out.println("Output the mark outside!");
 			}
-		} catch (NumberFormatException nfe) {
+		} catch (NumberFormatException e) {
 			System.err.println("Invalid Format!");
 		}
 		return ecst;
