@@ -8,43 +8,46 @@ public class IfCyclesExample1 {
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Search the score on a scale ECTS!");
-		ScaleECTS();
 
-		System.out.print("Do you really want to restart? Y/N");
-		BufferedReader yesnot = new BufferedReader(new InputStreamReader(System.in));
-		String beornottobe = (yesnot.readLine().toString());
+		BufferedReader inputStreamReader = new BufferedReader(new InputStreamReader(System.in));
+		String markValue= null;
+		String decision = null;
+		do {
+			System.out.println("Insert your mark:");			
+			markValue = inputStreamReader.readLine().toString();
 
-		if (beornottobe.equals("Y")) {
-			ScaleECTS();
-		} else {
-			System.exit(0);
-		}
+			String ecst = getScaleECTS(markValue);
+			System.out.println("Your ECST is: " + ecst);
+
+			System.out.print("Do you really want to restart? Y/N");
+			decision = inputStreamReader.readLine().toString();
+		} while ("Y".equals(decision));
 	}
 
-	public static void ScaleECTS() throws IOException {
-		BufferedReader mark = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("Enter mark:");
+	public static String getScaleECTS(String primaryNumberValue) throws IOException {
+		String ecst = null;
 		try {
-			int i = Integer.parseInt(mark.readLine());
+			int i = Integer.parseInt(primaryNumberValue);
 			if (i >= 1 && i <= 34) {
-				System.out.println("F");
+				ecst = "F";
 			} else if (i >= 35 && i <= 59) {
-				System.out.println("FX");
+				ecst = "FX";
 			} else if (i >= 60 && i <= 66) {
-				System.out.println("E");
+				ecst = "E";
 			} else if (i >= 67 && i <= 74) {
-				System.out.println("D");
+				ecst = "D";
 			} else if (i >= 75 && i <= 81) {
-				System.out.println("C");
-			} else if  (i >= 82 && i <= 89) {
-				System.out.println("B");
+				ecst = "C";
+			} else if (i >= 82 && i <= 89) {
+				ecst = "B";
 			} else if (i >= 90 && i <= 100) {
-				System.out.println("A");
+				ecst = "A";
 			} else if (i >= 101) {
 				System.out.println("Output the mark outside!");
 			}
 		} catch (NumberFormatException nfe) {
 			System.err.println("Invalid Format!");
 		}
+		return ecst;
 	}
 }
