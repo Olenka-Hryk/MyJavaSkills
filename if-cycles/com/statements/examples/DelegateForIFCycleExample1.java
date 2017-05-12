@@ -1,4 +1,5 @@
 package com.statements.examples;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -55,7 +56,7 @@ class Searching {
 	}
 
 	void getScaleECTS(ECTS _ects) throws IOException {
-		
+
 		messageDescriptionProgram messageDescription = new messageDescriptionProgram();
 		messageDescription.print();
 		messageForInputDataProgram messageForInput = new messageForInputDataProgram();
