@@ -25,11 +25,14 @@ public class IfCyclesExample1 {
 		} while ("Y".equals(decision));
 	}
 
-	// method for find scale ECTS from mark
-	public static String getScaleECTS(String primaryNumberValue) throws IOException {
+	/**
+	 * method for find scale ECTS from mark
+	 * @param markValue  the input data for method, means mark for which must be found ECTS 
+	 * **/
+	public static String getScaleECTS(String markValue) throws IOException {
 		String ecst = null;
 		try {
-			int i = Integer.parseInt(primaryNumberValue);
+			int i = Integer.parseInt(markValue);
 			if (i >= 1 && i <= 34) {
 				ecst = "F";
 			} else if (i >= 35 && i <= 59) {

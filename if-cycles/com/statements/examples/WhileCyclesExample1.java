@@ -28,10 +28,14 @@ public class WhileCyclesExample1 {
 		}
 	}
 
-	// method to print numbers in descending
+	/**
+	 * method to print numbers in descending
+	 * @param primaryNumberValue  the input data for method, means the primary number for which must be print all numbers from this number to 0
+	 * **/
 	public static void printNumbersInDescending(int primaryNumberValue) {
 		while (primaryNumberValue >= 0) {
 			System.out.println(" " + primaryNumberValue-- + ";");
 		}
 	}
 }
+ 
